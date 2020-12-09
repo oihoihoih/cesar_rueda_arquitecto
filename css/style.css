@@ -1,0 +1,213 @@
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+html {
+    font-size: 62.5%;
+    cursor: none;
+}
+
+body {
+    box-sizing: border-box;
+    width: 100vw;
+    height: 100vh;
+    padding: 3rem 6rem;
+    font-family: 'Space Grotesk', Helvetica, Arial, sans-serif;
+    background-color: #eaeaea;
+    color: #202020;
+
+}
+
+h1 {
+    font-size: 10rem;
+    font-weight: 300;
+    line-height: 8rem;
+}
+
+h2,
+.navigation__contact a {
+    font-size: 6rem;
+    font-weight: 300;
+    color: #fff;
+    line-height: 8.5rem;
+    text-decoration: none;
+}
+
+.navigation__contact a:hover {
+    color: #7a7a7a;
+    /* cursor: none; */
+}
+
+/* CURSOR */
+.cursor {
+    width: 5rem;
+    height: 5rem;
+    border: 1px solid #000;
+    border-radius: 50%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    z-index: 5000;
+}
+
+/* NAVIGATION */
+
+    .navigation__checkbox {
+        display: none;
+    }
+
+    .navigation__button {
+        font-size: 3rem;
+        font-weight: 700;
+        position: fixed;
+        top: 8rem;
+        right: 6rem;
+        z-index: 2000;
+        transition: color .8s ease .1s;
+    }
+    .navigation__button:hover {
+        cursor: none;
+        text-decoration: underline;
+    }
+
+    .navigation__background {
+        width: 100vw;
+        height: 0rem;
+        position: fixed;
+        top: 0;
+        right: 0;
+        background-color: #202020;
+        z-index: 1000;
+        transition: height .8s cubic-bezier(0.83, 0, 0.17, 1);
+    }
+
+    .navigation__nav {
+        height: 100vh;
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: -1500;
+        opacity: 0;
+        transition: opacity .8s ease .1s;
+    }
+
+    .navigation__contact {
+        padding: 5rem;
+        transition: opacity 2s;
+    }
+
+    .navigation__checkbox:checked ~ .navigation__background {
+        height: 100vh;
+    }
+
+    .navigation__checkbox:checked ~ .navigation__nav {
+        opacity: 1;
+        z-index: 1500;
+    }
+
+    .navigation__checkbox:checked ~ .navigation__button {
+        color: #fff;
+    }
+
+/* HEADER */
+.header {
+    width: 100%;
+    /* height: 12vh; */
+    border-bottom: 1px solid #000;
+}
+    .header__logo-box {
+        display: block;
+        padding-bottom: 2rem;
+    }
+
+    .header__logo-box img {
+        max-width: 20%;
+    }
+
+/* BUILDING SECTION */
+.main {
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.building {
+    width: 60%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* background-color: aliceblue; */
+    /* z-index:1600; */
+}
+    .building__card {
+        width: 60%;
+        min-height: 80vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.2s ease;
+        transform-style: preserve-3d;
+        /* box-shadow: 0 20px 20px rgba(0, 0, 0, 0.2), 0 20px 20px rgba(0, 0, 0, 0.2); */
+    }
+
+    .building__message h2 {
+        transition: all 0.5s ease-out;
+        /* z-index: 15000; */
+    }
+
+
+
+
+/* Small devices (landscape phones, 576px and up) */
+@media (max-width: 767px) { 
+    body {
+        box-sizing: border-box;
+        padding: 2rem;
+    }
+
+    h1 {
+        font-size: 6rem;
+        font-weight: 500;
+        line-height: 5rem;
+    }
+
+    h2, 
+    .navigation__contact a {
+        font-size: calc(28px + 16 * ((100vw - 576px) / 424));
+        font-weight: 400;
+        line-height: 5rem;
+    }
+
+    .navigation__button {
+        font-size: 2rem;
+        top: 5rem;
+        right: 2rem;
+    }
+
+    .navigation__contact {
+        margin-top: 20rem;
+    }
+
+    .header {
+        width: 100%;
+        height: auto;
+    }
+
+    .header__logo-box img {
+        max-width: 30%;
+    }
+
+    .building {
+        width: 80%;
+    }
+}
+
