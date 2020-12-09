@@ -37,16 +37,34 @@ h2,
     text-decoration: none;
 }
 
+h3 {
+    font-size: 3.5rem;
+    font-weight: 500;
+    color: #fff;
+    padding-top: 4rem;
+}
+
+.navigation__contact p {
+    font-size: 2.5rem;
+    font-weight: 300;
+    color: #fff;
+}
+
 .navigation__contact a:hover {
     color: #7a7a7a;
     /* cursor: none; */
+}
+
+.address {
+    border-top: 1px solid #fff;
+    margin-top: 8.5rem;
 }
 
 /* CURSOR */
 .cursor {
     width: 5rem;
     height: 5rem;
-    border: 1px solid #000;
+    border: 1px solid #0000ff;
     border-radius: 50%;
     position: absolute;
     transform: translate(-50%, -50%);
